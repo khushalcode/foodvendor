@@ -4,3 +4,104 @@
 
 expo-env.d.ts
 # @end expo-cli
+.next
+# Dependencies
+
+node_modules/
+
+# Expo
+
+.expo/
+.expo-shared/
+web-build/
+dist/
+
+# Expo local files
+
+.expo/
+expo-env.d.ts
+
+# Native
+
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/build/
+android/build/
+android/captures/
+android/.cxx/
+
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace/xcuserdata/
+ios/*.xcodeproj/xcuserdata/
+
+# EAS
+
+.eas/
+.easignore
+
+# Environment files
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug / logs
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+
+.DS_Store
+Thumbs.db
+
+# IDE
+
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.swp
+*.swo
+
+# TypeScript
+
+*.tsbuildinfo
+
+# Metro
+
+.metro-health-check*
+
+# Testing / coverage
+
+coverage/
+
+# Temporary files
+
+*.tmp
+*.temp
+
+# Mac
+
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Build artifacts
+
+*.apk
+*.aab
+*.ipa
+*.app
+*.dSYM
+*.hbc
+*.map

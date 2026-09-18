@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "Vendor App",
+    "slug": "vendor-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/app_icon.png",
+    "scheme": "vendorapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vendor.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "App needs camera access to capture product photos",
+        "NSPhotoLibraryUsageDescription": "App needs photo library access to upload product images"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/app_icon.png",
+        "backgroundColor": "#3B82F6"
+      },
+      "package": "com.vendor.app",
+      "permissions": ["android.permission.CAMERA", "android.permission.READ_EXTERNAL_STORAGE"]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/app_icon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#3B82F6"
+        }
+      ],
+      "expo-secure-store",
+      "expo-image-picker",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": "enable"
+    },
+    "extra": {
+      "supabaseUrl": "https://xtoinftyvasmixgywngv.supabase.co",
+      "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh0b2luZnR5dmFzbWl4Z3l3bmd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcyMTYwMjgsImV4cCI6MjEwMjc5MjAyOH0.dpe2My40IQ5ZzDjsWDKpaa3-0WVcGhONH0qvgvPbRGQ",
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}

@@ -136,4 +136,3 @@ vendor_app/
 - `customer_app/customar/` — Expo customer app (places orders)
 - `delivery_app/delivry_app/` — Expo delivery-man app (fulfills orders)
 - `vendor_app/` — **this app** — Expo vendor app (manages their store, items, orders, coupons)
-# foodvendor

@@ -1,0 +1,50 @@
+-- =====================================================================
+-- Vendor App — Schema Pointer
+-- ---------------------------------------------------------------------
+-- The vendor app now shares the SAME Supabase database as the admin
+-- panel, customer app, and delivery app. The full schema is owned by
+-- the admin panel project at:
+--
+--     admin_panel/supabase/base_schema.sql     ← CREATE TABLE statements
+--     admin_panel/supabase/init.sql             ← ALTER statements (admin)
+--     admin_panel/supabase/seed_demo.sql        ← demo admin + customer +
+--                                                 demo delivery-man +
+--                                                 demo vendor + sample data
+--     admin_panel/supabase/bootstrap_combined.sql ← all-in-one
+--
+-- Tables the vendor app reads/writes (with RLS):
+--
+--   AUTHENTICATED (auth.uid matches vendors.email):
+--     vendors            — SELECT/UPDATE own row (by email)
+--     stores              — SELECT/UPDATE own store (via vendor_id)
+--     store_categories    — full CRUD (filtered by store_id)
+--     items               — full CRUD (filtered by store_id)
+--     orders              — SELECT (filtered by store_id) + UPDATE status
+--     order_details       — SELECT (via parent order ownership)
+--     delivery_men        — SELECT (filtered by store_id) + INSERT/UPDATE/DELETE
+--     disbursements       — SELECT (filtered by store_id)
+--     coupons             — full CRUD (filtered by store_id)
+--     campaign_store      — INSERT/DELETE (filtered by store_id)
+--     conversations       — SELECT (sender_id or receiver_id = vendor's store)
+--     messages            — INSERT + SELECT (via parent conversation)
+--     user_notifications  — SELECT/UPDATE (filtered by user_id)
+--     withdrawal_methods — SELECT (global)
+--     withdraw_requests   — INSERT/SELECT (filtered by vendor_id)
+--     wallet_transactions — INSERT/SELECT (filtered by user_id)
+--
+--   PUBLIC READ (anon + authenticated):
+--     modules             — for module_id lookups
+--     zones               — for default zone lookup
+--     categories          — for category taxonomy
+--     banners             — admin-created banners
+--     campaigns           — admin-created campaigns (vendor joins via campaign_store)
+--     add_ons             — global addons
+--     brands              — for product creation
+--     units               — for product creation
+--
+-- Demo vendor login (created by seed_demo.sql):
+--   Email:    vendor@demo.com
+--   Password: Vendor@1234
+--
+-- See admin_panel/README.md for full setup instructions.
+-- =====================================================================
